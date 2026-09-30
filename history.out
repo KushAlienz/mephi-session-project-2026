@@ -302,3 +302,53 @@
   400  ls -la ~/mephi-screenshot.png
   401  file ~/mephi-screenshot.png
   402  history > ~/history.out
+| fstab | Монтирование /mephi-web |
+| passwd | Пользователи user1/2/3, curator1/2 |
+| shadow | Пароли |
+| group | Группы curators, developers |
+| pwquality.conf | minlen=12, enforcing=1 |
+
+### Пакет tcpdump
+
+- tcpdump-4.99.5-1.red80.x86_64.rpm
+
+---
+
+## Итог
+
+Все 8 разделов проекта выполнены. Настройки сохраняются после перезагрузки:
+
+
+
+  428  cd ~/mephi-session-project-2026
+  429  echo "# MEPHI Session Project 2026" > README.md
+  430  cat README.md
+  431  git init
+  432  git add .
+  433  git status
+  434  git commit -m "Add MEPHI session project 2026 files"
+  435  git branch -M main
+  436  git log --oneline
+  437  cd ~/mephi-session-project-2026
+  438  git remote add origin git@github.com:KushAlienz/mephi-session-project-2026.git
+  439  git remote -v
+  440  git push -u origin main
+  441  cd ~/mephi-session-project-2026
+  442  tail -n +99 history.out > history_clean.out
+  443  mv history_clean.out history.out
+  444  head -5 history.out
+  445  wc -l history.out
+  446  git add history.out
+  447  git commit -m "Clean history.out (remove old project entries)"
+  448  git push
+  449  git fetch origin
+  450  git log --oneline main..origin/main
+  451  git pull origin main --rebase
+  452  git status
+  453  git fetch origin
+  454  git log --oneline --graph --all -10
+  455  git push origin main
+  456  git log --oneline --graph --all -5
+  457  git status
+  458  cd ~/mephi-session-project-2026
+  459  history | tail -50 >> history.out
